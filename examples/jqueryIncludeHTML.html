@@ -1,0 +1,13 @@
+
+<!-- Add in head tag only seems to work there NOT after </body> -->
+<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+
+<!-- Wherever you would like to place the html doc-->
+<div id="navBar"></div> 
+
+<!-- Works only just before </body> tag-->
+<script> 
+        $(function(){
+          $("#navBar").load("Nav.html"); 
+        });
+</script>

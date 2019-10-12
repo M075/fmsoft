@@ -1,0 +1,265 @@
+/* https://codepen.io/Keale2/pen/mJzzNr - loading screen */
+
+.loading {
+  animation: rotation 1s infinite linear;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  border-top-color: rgba(255, 255, 255, 0.7);
+  height: 3em;
+  width: 3em;
+}
+
+@keyframes rotation {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.loader-wrapper {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+
+}
+/* Extra junk */
+.loading-wrapper html, body {
+  height: 100%;
+}
+
+.loading-wrapper body {
+  animation: bgTransition 20s infinite linear;
+  display: flex;
+  margin: 0;
+  overflow: hidden;
+}
+
+.loading {
+  margin: auto;
+}
+
+@keyframes bgTransition {
+  0% {
+    background-color: #08a;
+  }
+  
+  33% {
+    background-color: #80a;
+  }
+  
+  66% {
+    background-color: #0a8;
+  }
+  
+  100% {
+    background-color: #08a;
+  }
+}
+
+
+.moving-clouds {
+  position: absolute;
+  z-index: 1;
+  bottom: 0;
+  left: 0;
+  width: 200vw;
+  height: 43.75em;
+  overflow: hidden;
+  -webkit-animation: cloudLoop 50s linear infinite;
+  animation: cloudLoop 50s linear infinite;
+}
+
+@keyframes cloudLoop {
+  0% {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    -webkit-transform: translate3d(-50%, 0, 0);
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+.gradient {
+  /* border:1px solid black; */
+  background:radial-gradient(#c0daf1, #e1bdf1, #f5c7cf,#f1e8b9,#d0f0c1,#c2baf8);
+  background-size:7000px 7000px;
+  -moz-animation:Animation 10s ease infinite;
+  animation:Animation 10s ease infinite;
+}
+
+@keyframes Animation {
+  0% {
+    background-position:10%,0%;
+  }
+  100% {
+    background-position:90%,100%;
+ }
+}
+
+.nav-center {
+  text-align: center
+}
+ul #navpill {
+  display: inline-block;
+}
+li #navpill {
+  display: inline;
+}
+a #navpill {
+  float: left;
+}
+
+  .typewriter h1 {
+    color: #fff;
+    font-family: monospace;
+    overflow: hidden; /* Ensures the content is not revealed until the animation */
+    border-right: .15em solid orange; /* The typwriter cursor */
+    white-space: nowrap; /* Keeps the content on a single line */
+    margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+    letter-spacing: .5em; /* Adjust as needed */
+    animation: 
+      typing 3s steps(30, end),
+      blink-caret .5s step-end infinite;
+  }
+  
+  /* The typing effect */
+  @keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+  }
+  
+  /* The typewriter cursor effect */
+  @keyframes blink-caret {
+    from, to { border-color: transparent }
+    30% { border-color: orange }
+  }
+
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 6px;
+    background: rgba(0, 0, 0, 0);
+    transition: 0.5s ease;
+  }
+  .middle {
+  transition: .5s ease;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+  }
+  
+#cardHov:hover .middle {
+    opacity: 1;
+  }
+#cardHov:hover .overlay {
+    display: block;
+    background: rgba(0, 0, 0, 0.658);
+    }
+
+/* Blur other cards on hover over anyone of them */
+  #tab1:hover .card-plain {
+      filter:blur(3px);
+      opacity:.5;
+      transform: scale(.98);
+      box-shadow:none;
+    }
+  #tab1:hover .card-plain:hover {
+      transform:scale(1);
+      filter:blur(0px);
+      opacity:1;
+      box-shadow:0 8px 20px 0px rgba(0,0,0,0.125);
+    }
+    #tab2:hover .card-plain {
+      filter:blur(3px);
+      opacity:.5;
+      transform: scale(.98);
+      box-shadow:none;
+    }
+  #tab2:hover .card-plain:hover {
+      transform:scale(1);
+      filter:blur(0px);
+      opacity:1;
+      box-shadow:0 8px 20px 0px rgba(0,0,0,0.125);
+    }
+    #tab3:hover .card-plain {
+      filter:blur(3px);
+      opacity:.5;
+      transform: scale(.98);
+      box-shadow:none;
+    }
+  #tab3:hover .card-plain:hover {
+      transform:scale(1);
+      filter:blur(0px);
+      opacity:1;
+      box-shadow:0 8px 20px 0px rgba(0,0,0,0.125);
+    }
+  
+    /*
+*
+* ==========================================
+* CUSTOM UTIL CLASSES
+* ==========================================
+*
+*/
+
+/* Timeline holder */
+ul.timeline {
+  list-style-type: none;
+  position: relative;
+  padding-left: 1.5rem;
+}
+
+/* Timeline vertical line */
+ul.timeline:before {
+  content: ' ';
+  background: #fff;
+  display: inline-block;
+  position: absolute;
+  left: 16px;
+  width: 4px;
+  height: 100%;
+  z-index: 400;
+  border-radius: 1rem;
+}
+
+li.timeline-item {
+  margin: 20px 0;
+}
+
+/* Timeline item arrow */
+.timeline-arrow {
+  border-top: 0.5rem solid transparent;
+  border-right: 0.5rem solid #fff;
+  border-bottom: 0.5rem solid transparent;
+  display: block;
+  position: absolute;
+  left: 2rem;
+}
+
+/* Timeline item circle marker */
+li.timeline-item::before {
+  content: ' ';
+  background: #ddd;
+  display: inline-block;
+  position: absolute;
+  border-radius: 50%;
+  border: 3px solid #fff;
+  left: 11px;
+  width: 14px;
+  height: 14px;
+  z-index: 400;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  transform: all .2s ease;
+}
+
+    
+ 

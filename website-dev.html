@@ -29,6 +29,7 @@
 </head>
 
 <body>
+        <div id='loading_wrap' style='position:fixed; height:100%; width:100%; overflow:hidden; top:0; left:0;'>Loading, please wait.</div>
     <!-- Navbar will come here 
         ========================================================================================= -->
 
@@ -1285,7 +1286,13 @@
             $("#footer").load("Footer.html");
         });
     </script>
+    <script type='text/javascript'>
+        $(document).ready(function(){
+                $('#loading_wrap').remove();
+            });
+    </script>
 </body>
+
 <!--   Core JS Files   -->
 <script src="assets/js/jquery.min.js" type="text/javascript"></script>
 <script src="assets/js/bootstrap.min.js" type="text/javascript"></script>
